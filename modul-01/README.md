@@ -1,16 +1,30 @@
-# Modul [01] - [Nama Topik Modul]
+# Modul [01] - [Tabel Konversi Suhu Celcius – Reamur – Fahrenhei]
 
-**Nama:** [Nama Mahasiswa]  
-**NIM:** [NIM Mahasiswa]  
-**Kelas:** [Kelas/Kelompok]  
+**Nama:** [Muhammad Iqbal]  
+**NIM:** [1306625004]  
+**Kelas:** [FISIKA-C]  
 
 ---
 
 ## 1. Problem Statement
-> Jelaskan latar belakang masalah, parameter yang diketahui, serta tujuan dari praktikum atau pemodelan pada modul ini.
+> Membuat sebuah program untuk membuat "Tabel Konversi Suhu Celcius – Reamur – Fahrenheit" denga memberikan input kemudian program bekerja dengan mengkonversikan suhu Celcius menjadi reamur & fahrenheit atau sebaliknya.
 
 ## 2. Mathematical Equation
-> Tuliskan persamaan fisika/matematika, rumus numerik, atau penurunan rumus yang digunakan dalam modul ini menggunakan format LaTeX.
+> F = \frac{9}{5}C + 32 atau {}^\circ F = \frac{9}{5}{}^\circ C + 32
+> R = \frac{4}{5}C atau {}^\circ R = \frac{4}{5}{}^\circ C
+> Bentuk umum \frac{C}{5} = \frac{F-32}{9} = \frac{R}{4}
 
 ## 3. Algorithm
-> Tuliskan langkah-langkah logika penyelesaian masalah secara sistematis sebelum diimplementasikan ke dalam kode Python (`main.py`).
+> 1. Mulai
+> 2. Cetak/prinnt judul "Program Konversi Suhu"
+> 3. Print "Nama: Muhammad Iqbal"
+> 4. Print "NIM:1306625004"
+> 5. Input  "Suhu Awal:..."
+> 6. Input "Suhu Akhir:..."
+> 7. Input "Selang Waktu:..."
+> 8. Print "TABLE KONVERSI"
+> 9. Pring "TABEL....."
+> 10. Hitung Celcius ke Reamur : (Rumus C -> R)
+> 11. Hitung Celcius ke Fahrenheit : (Rumus C -> F)
+> 12. Print Hasil
+> 13. Selesai
