@@ -10,7 +10,7 @@
 > Membuat sebuah program untuk membuat "Tabel Konversi Suhu Celcius – Reamur – Fahrenheit" denga memberikan input kemudian program bekerja dengan mengkonversikan suhu Celcius menjadi reamur & fahrenheit atau sebaliknya.
 
 ## 2. Mathematical Equation
-> $$\circ F = \frac{9}{5}C + 32$$ atau $${}^\circ F = \frac{9}{5}{}^\circ C + 32$$
+> $${}^\circ F = \frac{9}{5}C + 32$$ atau $${}^\circ F = \frac{9}{5}{}^\circ C + 32$$
 > $$R = \frac{4}{5}C$$ atau $${}^\circ R = \frac{4}{5}{}^\circ C$$
 > Bentuk umum $$\frac{C}{5} = \frac{F-32}{9} = \frac{R}{4}$$
 
