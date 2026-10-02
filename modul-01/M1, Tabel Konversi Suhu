@@ -1,0 +1,25 @@
+Suhu_Celcius_Awal = float(input("Masukkan suhu awal dalam Celcius : "))
+Suhu_Celcius_Akhir = float(input("Masukkan suhu akhir dalam Celcius : "))
+Selang_Waktu = int(input("Masukkan selang waktu (dalam derajat Celsius): "))
+
+print("Program Konversi Suhu Celcius ke Fahrenheit dan Reamur dalam bentuk tabel")
+print("=" * 60)
+print("Nama : Muhammad Iqbal")
+print("NIM  : 1306625004")
+print("=" * 60)
+
+print(f"|{'No':<4} || {'Celcius':<12} || {'Fahrenheit':<15} || {'Reamur':<10}|")
+print("=" * 60)
+
+if Suhu_Celcius_Awal <= Suhu_Celcius_Akhir:
+    for i, Suhu_Celcius in enumerate(range(int(Suhu_Celcius_Awal), int(Suhu_Celcius_Akhir) + 1, Selang_Waktu), start=1):
+        Fahrenheit = (9 / 5) * Suhu_Celcius + 32
+        Reamur = (4 / 5) * Suhu_Celcius
+        print(f"|{i:<4} || {Suhu_Celcius:<12} || {Fahrenheit:<15.2f} || {Reamur:<10.2f}|")
+else:
+    for i, Suhu_Celcius in enumerate(range(int(Suhu_Celcius_Awal), int(Suhu_Celcius_Akhir) - 1, -Selang_Waktu), start=1):
+        Fahrenheit = (9 / 5) * Suhu_Celcius + 32
+        Reamur = (4 / 5) * Suhu_Celcius
+        print(f"|{i:<4} || {Suhu_Celcius:<12} || {Fahrenheit:<15.2f} || {Reamur:<10.2f}|")
+
+print("Selesai")
