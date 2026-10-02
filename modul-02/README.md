@@ -33,7 +33,6 @@
 >    6. print(f"Himpunan faktor dari {Bilangan{} adalah {Faktor}")
 >    7. Ulangi= Input("Apakah anda ingin mencari himpunan faktor suatu bilangan lagi? (ya/tidak):  ")
 >    8. Ulangi=tidak?
-
 >    8. 1. tidak, ulangi program ke 5. dalam kondisi true
 >       2. ya. kembali ke program algoritma 5. dalam kondisi false break lalu ke 5.9
 >    9. break, false, outloop
