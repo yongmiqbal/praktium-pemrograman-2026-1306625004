@@ -1,0 +1,29 @@
+print("Program himpunan faktor dari bilangan bulat positif")
+print("=" * 60)
+print("Nama : Muhammad Iqbal")
+print("NIM  : 1306625004")
+print("=" * 60)
+def cari_faktor():
+	while True:
+		Bilangan = int(input("Masukkan bilangan bulat positif: "))
+		
+		if Bilangan <= 0:
+			print("Bilangan harus lebih besar dari 0.")
+			continue
+		else:
+			Faktor = []
+
+			for Calon_Faktor in range(1, Bilangan + 1):
+				if Bilangan % Calon_Faktor == 0:
+					Faktor.append(Calon_Faktor)
+				Calon_Faktor += 1
+
+			print(f"Himpunan faktor dari {Bilangan} adalah {Faktor}")
+
+		ulangi = input("Apakah Anda ingin mencari himpunan faktor suatu bilangan lagi? (ya/tidak): ").strip().lower()
+		if ulangi == "tidak":
+			break
+
+cari_faktor()
+
+print("Terima kasih telah menggunakan program ini.")
