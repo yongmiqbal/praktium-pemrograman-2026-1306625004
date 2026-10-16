@@ -1,0 +1,56 @@
+import math
+
+print("Program Menghitung Sin dan Cos dengan Deret Maclaurin")
+print("=" * 60)
+print("Nama : Muhammad Iqbal")
+print("NIM  : 1306625004")
+print("=" * 60)
+
+def sin_maclaurin(x):
+    sin_x = 0
+    n = 0
+    er = 100
+
+    while er >= 5:
+        suku = ((-1)**n * x**(2*n + 1)) / math.factorial(2*n + 1)
+        sin_x = sin_x + suku
+
+        nilai_eksak = math.sin(x)
+        er = abs((nilai_eksak - sin_x) / nilai_eksak) * 100
+
+        n = n + 1
+
+    return sin_x, er
+
+
+def cos_maclaurin(x):
+    cos_x = 0
+    n = 0
+    er = 100
+
+    while er >= 5:
+        suku = ((-1)**n * x**(2*n)) / math.factorial(2*n)
+        cos_x = cos_x + suku
+
+        nilai_eksak = math.cos(x)
+        er = abs((nilai_eksak - cos_x) / nilai_eksak) * 100
+
+        n = n + 1
+
+    return cos_x, er
+
+
+
+sudut_derajat = float(input("Masukkan sudut dalam derajat = "))
+
+x = math.radians(sudut_derajat)
+
+sin_x, er_sin = sin_maclaurin(x)
+cos_x, er_cos = cos_maclaurin(x)
+
+print("\nHASIL:")
+print("_" * 64)
+print(f"|| {'Nilai Sinus':<12} || {'Error Sin':<10} || {'Nilai Cosinus':<15} || {'Error Cos':<10} |")
+print(f"|| {str(sudut_derajat) + '°':<12} || {'':<10} || {str(sudut_derajat) + '°':<15} || {'':<10} |")
+print(f"|| {'-'*12} || {'-'*10} || {'-'*15} || {'-'*10} |")
+print(f"|| {sin_x:<12.6f} || {er_sin:<10.2f} || {cos_x:<15.2f} || {er_cos:<10.2f} |")
