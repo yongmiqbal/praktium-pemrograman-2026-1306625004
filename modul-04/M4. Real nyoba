@@ -1,0 +1,82 @@
+import pandas as pd
+from pathlib import Path
+
+def hitung_grade(nilai):
+    if nilai >= 86:
+        return 'A'
+    elif nilai >= 81:
+        return 'A-'
+    elif nilai >= 76:
+        return 'B+'
+    elif nilai >= 71:
+        return 'B'
+    elif nilai >= 66:
+        return 'B-'
+    elif nilai >= 61:
+        return 'C+'
+    elif nilai >= 56:
+        return 'C-'
+    else:
+        return 'TL'
+
+def main():
+    print("Program Grading Nilai Mahasiswa")
+    print("=" * 60)
+    print("Nama : Muhammad Iqbal")
+    print("NIM  : 1306625004")
+    print("\nLaporan Grading Mahasiswa")
+
+    try:
+        file_excel = Path(__file__).resolve().with_name('DataNilai.xlsx')
+        df = pd.read_excel(file_excel)
+    except FileNotFoundError:
+        print("error: File 'DataNilai.xlsx' tidak ditemukan. Pastikan file ada di folder yang sama dengan program.")
+        return
+
+    col_Nama_Mahasiswa = df.columns[0]
+    col_lain = df.columns[2]
+    col_UTS = df.columns[3]
+    col_UAS = df.columns[4]
+
+    rekap = {
+        "A": 0,
+        "A-": 0,
+        "B+": 0,
+        "B": 0,
+        "B-": 0,
+        "C+": 0,
+        "C-": 0,
+        "TL": 0
+    }
+    print("-" * 45)
+    print(f"{'No':<5}{'Nama Mahasiswa':<20}{'Nilai Akhir':<10}{'Grade':<5}")
+    print("-" * 45)
+
+    total_mahasiswa = len(df)
+    for nomor, (_, row) in enumerate(df.iterrows(), start=1):
+        nama_mahasiswa = str(row[col_Nama_Mahasiswa])
+        nilai_lain = float(row[col_lain])
+        nilai_UTS = float(row[col_UTS])
+        nilai_UAS = float(row[col_UAS])
+
+        nilai_akhir = (nilai_lain * 0.30) + (nilai_UTS * 0.35) + (nilai_UAS * 0.35)
+        grade = hitung_grade(nilai_akhir)
+        rekap[grade] += 1
+
+        print(f"|{nomor:<4}|{nama_mahasiswa:<15}|{nilai_akhir:<11.2f}|{grade:<5}|")
+
+    print("-" * 45)
+    print("\nRekapitulasi Grade Mahasiswa")
+    print(f"Grade A = {rekap['A']}")
+    print(f"Grade A- = {rekap['A-']}")
+    print(f"Grade B+ = {rekap['B+']}")
+    print(f"Grade B = {rekap['B']}")
+    print(f"Grade B- = {rekap['B-']}")
+    print(f"Grade C+ = {rekap['C+']}")
+    print(f"Grade C- = {rekap['C-']}")
+    print(f"Tidak Lulus (TL) = {rekap['TL']}")
+    print(f"Total Mahasiswa = {total_mahasiswa}")
+    print("\n*selesai*")
+
+if __name__ == "__main__":
+    main()
