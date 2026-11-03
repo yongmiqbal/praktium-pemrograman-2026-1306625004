@@ -1,0 +1,28 @@
+print("Program Mengurutkan Nilai dari yang Terkecil")
+print("=" * 60)
+print("Nama : Muhammad Iqbal")
+print("NIM  : 1306625004")
+print("=" * 45)
+
+while True:
+	try:
+		input_nilai = input(
+			"Masukkan nilai, pisahkan dengan koma (contoh: 77, 66, 99, 38, 87): "
+		)
+		nilai = [int(item.strip()) for item in input_nilai.split(",")]
+		break
+	except ValueError:
+		print("Input tidak valid. Masukkan angka dan pisahkan dengan koma.")
+
+# Mengurutkan list menggunakan bubble sort dan perulangan while.
+i = 0
+while i < len(nilai) - 1:
+	j = 0
+	while j < len(nilai) - 1 - i:
+		if nilai[j] > nilai[j + 1]:
+			nilai[j], nilai[j + 1] = nilai[j + 1], nilai[j]
+		j += 1
+	i += 1
+
+nilai_terurut = ", ".join(str(angka) for angka in nilai)
+print("\nNilai setelah diurutkan: {}".format(nilai_terurut))
